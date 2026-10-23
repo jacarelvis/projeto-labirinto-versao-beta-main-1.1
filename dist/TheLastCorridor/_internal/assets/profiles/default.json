@@ -1,0 +1,207 @@
+{
+    "display": {
+        "width": 1024,
+        "height": 768,
+        "fps": 60,
+        "fullscreen": false,
+        "reduce_flashes": false,
+        "reduce_shakes": false,
+        "disable_intense_effects": false,
+        "crt_scanlines": true
+    },
+    "audio": {
+        "master_volume": 1.0,
+        "jumpscare_volume": 1.0,
+        "footstep_volume": 1.0,
+        "ambient_volume": 0.5,
+        "glitch_volume": 0.7,
+        "computer_volume": 0.8,
+        "interaction_volume": 0.6,
+        "ambient_enabled": true,
+        "boot_sound_enabled": true,
+        "audio_muted": false,
+        "mute_ambient_during_jumpscare": true
+    },
+    "maze": {
+        "cols": 19,
+        "rows": 19,
+        "cell_size": 40,
+        "player_speed": 4.0,
+        "flashlight_radius": 135,
+        "exit_x": 17,
+        "exit_y": 17,
+        "start_x": 1,
+        "start_y": 1
+    },
+    "apparitions": [
+        {
+            "id": "default_shadow",
+            "image_path": "assets/images/aparicao_labirinto.png",
+            "sound_path": "",
+            "sound_type": "glitch",
+            "sound_probability": 0.8,
+            "duration_ms": 180,
+            "probability": 0.35,
+            "min_interval_sec": 8.0,
+            "min_distance_steps": 10,
+            "intensity": 1.0,
+            "position_mode": "center",
+            "region_tag": "all",
+            "max_occurrences": -1
+        }
+    ],
+    "final_jumpscare": {
+        "image_path": "assets/images/jumpscare_principal.png",
+        "sound_path": "assets/audio/jumpscares/grito.mp3",
+        "sound_type": "distortion",
+        "sound_delay_ms": 0,
+        "mute_ambient": true,
+        "volume": 1.0,
+        "duration_ms": 4500,
+        "screen_shake": true,
+        "visual_distortion": true,
+        "flash": true,
+        "zoom": true
+    },
+    "desktop": {
+        "computer_name": "ARCHIVE-09",
+        "wallpaper_color": "#004040",
+        "wallpaper_image": "",
+        "boot_duration_ms": 3200,
+        "boot_lines": [
+            "ARCHIVE-09 BIOS v3.20 (C) 1998 RETRO SYSTEMS CORP.",
+            "CPU: 133 MHz CLOCK DETECTED. 32MB RAM INSTALLED... OK",
+            "PRIMARY MASTER: 1.2 GB HARD DISK... INITIALIZED",
+            "MOUNTING RECOVERY VIRTUAL FILE SYSTEM...",
+            "WARNING: MEMORY LEAK DETECTED AT SEGMENT 0x00FF8C",
+            "ERROR CODE 0x666: CORRUPTED RECORD RESTORED.",
+            "RESUMING SUSPENDED SESSION...",
+            "STARTING VIRTUAL DESKTOP INTERFACE..."
+        ]
+    },
+    "investigation": {
+        "mandatory_message": "EXISTE UM ARQUIVO NO SEU COMPUTADOR, O ENCONTRE E ESCREVA O CODIGO AQUI",
+        "target_document_path": "Arquivos/sistema/acesso_restrito.txt",
+        "secret_code": "Venlafaxina",
+        "case_sensitive": false,
+        "strip_whitespace": true,
+        "victory_message": "ARQUIVO RECONHECIDO. CODIGO ACEITO.\n\nA CONEXAO COM O TERMINAL FOI ENCERRADA COM SUCESSO.\nVOCE COMPREENDEU O QUE ACONTECEU NO ULTIMO CORREDOR."
+    },
+    "dangerous_folders": {
+        "Meus Documentos/Pessoal/nao_abra": {
+            "folder_path": "Meus Documentos/Pessoal/nao_abra",
+            "status": "dangerous",
+            "scare_image": "assets/images/jumpscare_pasta.png",
+            "scare_audio": "assets/audio/jumpscares/grito.mp3",
+            "sound_type": "scream",
+            "duration_ms": 2000,
+            "volume": 1.0,
+            "shake": true,
+            "trigger_once": false,
+            "has_triggered": false,
+            "return_to_parent": true,
+            "suspicious_message": "AVISO: Distorção magnética detectada nesta pasta."
+        },
+        "Lixeira": {
+            "folder_path": "Lixeira",
+            "status": "suspicious",
+            "scare_image": "assets/images/jumpscare_pasta.png",
+            "scare_audio": "assets/audio/jumpscares/grito.mp3",
+            "sound_type": "scream",
+            "duration_ms": 3500,
+            "volume": 1.0,
+            "shake": true,
+            "trigger_once": false,
+            "has_triggered": false,
+            "return_to_parent": true,
+            "suspicious_message": "A Lixeira contem arquivos fragmentados corrompidos."
+        }
+    },
+    "filesystem_tree": {
+        "name": "root",
+        "type": "folder",
+        "children": {
+            "Desktop": {
+                "type": "folder",
+                "children": {
+                    "LEIA-ME.txt": {
+                        "type": "file",
+                        "content": "SE VOCE ESTA LENDO ISTO, O SISTEMA RECONHECEU SUA PRESENCA.\nNAO DEVERIAM HAVER OUTRAS TESTEMUNHAS.\n\nPROCURE NOS ARQUIVOS DO SISTEMA. O CODIGO ESTA ESCONDIDO ONDE\nNINGUEM TEM AUTORIZACAO PARA MEXER."
+                    },
+                    "notas_antigas.txt": {
+                        "type": "file",
+                        "content": "Diario de manutencao:\n- Os corredores estao mudando de lugar durante a noite.\n- Trancamos o relatorio final e o codigo de contingencia em 'Arquivos/sistema'.\n- Tome cuidado com pastas pessoais. Algo esta preso la dentro."
+                    }
+                }
+            },
+            "Meus Documentos": {
+                "type": "folder",
+                "children": {
+                    "Relatorios": {
+                        "type": "folder",
+                        "children": {
+                            "relatorio_01.txt": {
+                                "type": "file",
+                                "content": "RELATORIO 01 - PROJETO ULTIMO CORREDOR\nData: 14/10/1998\nAs cobaias relataram visoes de rostos desfigurados nas curvas.\nA sensacao de ser perseguido persiste mesmo apos o desligamento."
+                            },
+                            "relatorio_final.txt": {
+                                "type": "file",
+                                "content": "RELATORIO FINAL:\nEvacuacao imediata decretada.\nPara finalizar a simulacao, use a chave mestra gravada no arquivo de acesso restrito."
+                            }
+                        }
+                    },
+                    "Pessoal": {
+                        "type": "folder",
+                        "children": {
+                            "diario.txt": {
+                                "type": "file",
+                                "content": "Hoje ouvi passos atras da porta do escritorio.\nQuando olhei, a luz do monitor oscilou.\nSe precisar do codigo, va em 'Arquivos/sistema'."
+                            },
+                            "nao_abra": {
+                                "type": "folder",
+                                "children": {
+                                    "aviso.txt": {
+                                        "type": "file",
+                                        "content": "VOCE NAO DEVERIA TER ENTRADO AQUI."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "Arquivos": {
+                "type": "folder",
+                "children": {
+                    "backup": {
+                        "type": "folder",
+                        "children": {
+                            "registro.txt": {
+                                "type": "file",
+                                "content": "Backup corrompido em 31/10/1998."
+                            }
+                        }
+                    },
+                    "sistema": {
+                        "type": "folder",
+                        "children": {
+                            "acesso_restrito.txt": {
+                                "type": "file",
+                                "content": "=========================================\nARQUIVO DE SEGURANCA NIVEL 5 - AUTORIZADO\n=========================================\n\nCODIGO DE CONTINGENCIA FINAL:\n\n        Venlafaxina\n\nDIGITE ESTE CODIGO NA JANELA DE VERIFICACAO\nPARA ENCERRAR O PROTOCOLO.\n========================================="
+                            }
+                        }
+                    }
+                }
+            },
+            "Lixeira": {
+                "type": "folder",
+                "children": {
+                    "fragmentos.txt": {
+                        "type": "file",
+                        "content": "...nao olhe para tras... a saida nunca foi uma saida..."
+                    }
+                }
+            }
+        }
+    }
+}
